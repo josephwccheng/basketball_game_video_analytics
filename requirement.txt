@@ -1,0 +1,4 @@
+youtube_dl
+pydub
+pyaudio
+python-dotenv
