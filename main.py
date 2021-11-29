@@ -6,7 +6,8 @@ import json
 
 def setup_tokens():
     expected_env_vars = [
-        'YOUTUBE_URL'
+        'YOUTUBE_DOWNLOAD',
+        'VIDEO_PATH'
     ]
     # Refresh environment variables since load_dotenv doesn't override them if already set
     for env_var in expected_env_vars:
@@ -32,7 +33,16 @@ def download_videos():
 
 def main():
     setup_tokens()
-    download_videos()
-    print("main finished")
-
+    # Step 1: Download videos only if the youtube download environment variable is true
+    if os.getenv('YOUTUBE_DOWNLOAD').lower() == "true":
+        download_videos()
+    else:
+        print("skipping video download")
+    
+    # Step 2: Read the video from the .data folder
+    video_lists = os.listdir(os.getenv('VIDEO_PATH'))
+    if len(video_lists) < 0:
+        print("no videos in .data folder")
+    else:
+        print(f"first video is: {video_lists[0]}")
 main()

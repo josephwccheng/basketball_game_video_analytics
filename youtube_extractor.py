@@ -22,5 +22,6 @@ class YoutubeExtractor:
         ydl_opts = ylformat
         with youtube_dl.YoutubeDL(ydl_opts) as ydl:
             ydl.download([url])
+        # (TODO) - download the videos into a directory
 
 
