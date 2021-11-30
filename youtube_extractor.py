@@ -1,5 +1,6 @@
 from __future__ import unicode_literals
 import youtube_dl
+import os
 from enum import Enum
 
 class YLFormat(Enum):
@@ -18,7 +19,7 @@ class YLFormat(Enum):
     mp4_1280_720 = '22'
 
 class YoutubeExtractor:
-    def download(self, url, ylformat={'format':YLFormat.mp4_480p.value}):
+    def download(self, url, ylformat={'format':YLFormat.mp4_720p.value}):
         ydl_opts = ylformat
         with youtube_dl.YoutubeDL(ydl_opts) as ydl:
             ydl.download([url])

@@ -1,4 +1,8 @@
 youtube_dl
 pydub
-pyaudio
+# pyaudio
 python-dotenv
+numpy
+matplotlib
+# opencv-python
+opencv-contrib-python

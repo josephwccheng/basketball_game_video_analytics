@@ -1,7 +1,11 @@
 .env
 *.pyc
 env/*
+wsl_env/*
+windows_env/*
 logs/*
 .data
 .DS_Store
 __pycache__
+yolo3/*
+output/*
